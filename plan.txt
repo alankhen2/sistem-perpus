@@ -1,0 +1,6 @@
+siswa :
+pinjam buku yang ada (dengan request terlebih dahulu), melihat semua buku yang ada
+
+petugas :
+tambah buku, edit status peminjaman jika buku sudah dikembalikan
+, melihat siswa sudah meminjam buku apa saja, buku dipinjam oleh siapa, melihat riwayat peminjaman.
