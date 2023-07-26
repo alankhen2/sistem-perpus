@@ -27,13 +27,19 @@ Route::put('/buku/update/{id}', [\App\Http\Controllers\BukuController::class, 'u
 Route::get('/buku/hapus/{id}', [\App\Http\Controllers\BukuController::class, 'hapus']);
 
 
-Route::get('/siswa', function () {
-    return view('perpus.siswa');
-});
+Route::get('/siswa', [\App\Http\Controllers\SiswaController::class, 'index']);
+Route::get('/siswa/tambah', [\App\Http\Controllers\SiswaController::class, 'tambah']);
+Route::post('/siswa/store', [\App\Http\Controllers\SiswaController::class, 'store']);
+Route::get('/siswa/edit/{id}', [\App\Http\Controllers\SiswaController::class, 'edit']);
+Route::put('/siswa/update/{id}', [\App\Http\Controllers\SiswaController::class, 'update']);
+Route::get('/siswa/hapus/{id}', [\App\Http\Controllers\SiswaController::class, 'hapus']);
 
-Route::get('/petugas', function () {
-    return view('perpus.petugas');
-});
+Route::get('/petugas', [\App\Http\Controllers\PetugasController::class, 'index']);
+Route::get('/petugas/tambah', [\App\Http\Controllers\PetugasController::class, 'tambah']);
+Route::post('/petugas/store', [\App\Http\Controllers\PetugasController::class, 'store']);
+Route::get('/petugas/edit/{id}', [\App\Http\Controllers\PetugasController::class, 'edit']);
+Route::put('/petugas/update/{id}', [\App\Http\Controllers\PetugasController::class, 'update']);
+Route::get('/petugas/hapus/{id}', [\App\Http\Controllers\PetugasController::class, 'hapus']);
 
 Route::get('/peminjaman', function () {
     return view('perpus.peminjaman');

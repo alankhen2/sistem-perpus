@@ -27,7 +27,45 @@
     <!-- .content -->
     <div class="content mt-3">
         <div class="animated fadeIn">
-            Siswa Menu
+            <div class="container">
+                <div class="card mt-3">
+                    <div class="card-header text-center">
+                        <b>Olah Data Siswa</b>
+                    </div>
+                    <div class="card-body">
+                        <a href="/siswa/tambah" class="btn btn-primary">Tambah Siswa Baru</a>
+                        <br/>
+                        <br/>
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>NIS</th>
+                                <th>Nama</th>
+                                <th>Kelas</th>
+                                <th>No.HP</th>
+                                <th>Aksi</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($siswa as $no=>$b)
+                                <tr>
+                                    <td>{{ $no+1 }}</td>
+                                    <td>{{ $b->nis }}</td>
+                                    <td>{{ $b->nama }}</td>
+                                    <td>{{ $b->kelas }}</td>
+                                    <td>{{ $b->nohp }}</td>
+                                    <td>
+                                        <a href="/siswa/edit/{{ $b->id }}" class="btn btn-warning">Edit</a>
+                                        <a href="/siswa/hapus/{{ $b->id }}" class="btn btn-danger">Hapus</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div><!-- .animated -->
     </div>
     <!-- .content -->
