@@ -11,4 +11,17 @@ class peminjaman extends Model
 
     protected $table = 'peminjaman';
 
+    protected $fillable = ['idpetugas', 'idsiswa', 'idbuku'];
+
+    public function siswa(){
+        return $this->belongsTo(siswa::class, 'idsiswa');
+    }
+
+    public function buku(){
+        return $this->belongsTo(buku::class, 'idbuku');
+    }
+
+    public function petugas(){
+        return $this->belongsTo(petugas::class, 'idpetugas');
+    }
 }

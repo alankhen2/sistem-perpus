@@ -14,6 +14,6 @@ class buku extends Model
     protected $fillable = ['kodebuku', 'judul', 'pengarang', 'penerbit'];
 
     public function peminjaman(){
-        return $this->belongsToMany(peminjaman::class);
+        return $this->hasMany(peminjaman::class);
     }
 }

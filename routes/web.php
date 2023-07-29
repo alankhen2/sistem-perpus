@@ -41,9 +41,17 @@ Route::get('/petugas/edit/{id}', [\App\Http\Controllers\PetugasController::class
 Route::put('/petugas/update/{id}', [\App\Http\Controllers\PetugasController::class, 'update']);
 Route::get('/petugas/hapus/{id}', [\App\Http\Controllers\PetugasController::class, 'hapus']);
 
-Route::get('/peminjaman', function () {
-    return view('perpus.peminjaman');
-});
+Route::get('/peminjaman', [\App\Http\Controllers\PinjamanController::class, 'index']);
+Route::get('/peminjaman/tambah', [\App\Http\Controllers\PinjamanController::class, 'tambah']);
+Route::post('/peminjaman/store', [\App\Http\Controllers\PinjamanController::class, 'store']);
+Route::get('/peminjaman/hapus/{id}', [\App\Http\Controllers\PinjamanController::class, 'hapus']);
+Route::get('/peminjaman/edit/{id}', [\App\Http\Controllers\PinjamanController::class, 'edit']);
+Route::put('/peminjaman/update/{id}', [\App\Http\Controllers\PinjamanController::class, 'update']);
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

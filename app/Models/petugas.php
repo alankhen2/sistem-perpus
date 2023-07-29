@@ -13,6 +13,6 @@ class petugas extends Model
     protected $fillable = ['nama', 'nohp'];
 
     public function peminjaman(){
-        return $this->belongsToMany(peminjaman::class);
+        return $this->hasMany(peminjaman::class);
     }
 }

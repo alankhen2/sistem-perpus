@@ -14,6 +14,6 @@ class siswa extends Model
     protected $fillable = ['nis', 'nama', 'kelas', 'nohp'];
 
     public function peminjaman(){
-        return $this->belongsToMany(peminjaman::class);
+        return $this->hasMany(peminjaman::class);
     }
 }
